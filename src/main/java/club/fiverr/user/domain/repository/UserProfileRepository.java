@@ -18,6 +18,10 @@ public interface UserProfileRepository {
 
     List<UserProfile> findActiveSellers();
 
+    default List<UserProfile> findAllSellers() {
+        return findActiveSellers();
+    }
+
     boolean existsByAccountId(UUID accountId);
 
     boolean existsByUsername(String username);

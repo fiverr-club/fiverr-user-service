@@ -53,6 +53,11 @@ public class JpaUserProfileRepository implements UserProfileRepository {
     }
 
     @Override
+    public List<UserProfile> findAllSellers() {
+        return findActiveSellers();
+    }
+
+    @Override
     public boolean existsByAccountId(UUID accountId) {
         return jpaRepository.existsByAccountId(accountId);
     }
